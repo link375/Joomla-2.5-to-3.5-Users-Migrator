@@ -26,10 +26,6 @@ results_first = first_c.fetchall()
 second_list = list(results_second)
 first_list = list(results_first)
 
-# USE FOR TESTING SYNTAX!!
-#print(ce_list[1])
-#print(mec_list[1])
-#print(ce_list[1][3])
 
 def extract_items(list):
     """extract all items from a list and put them into a new list"""
@@ -47,10 +43,8 @@ def extract_items(list):
     return items
 
 
-# create a list of items without and index
+# create a list of items without an index
 second_items = extract_items(second_list)
-
-# print(mec_items)
 
 # create a csv file and writer
 with open("users.csv", "w") as csvfile:
@@ -68,7 +62,6 @@ with open("users.csv", "w") as csvfile:
 
     for row in first_list:  # iterate through the list one row at a time (original site)
         for item in row:  # iterate through items in each row one item at a time
-            # print(second_items)
             if row[0] in second_items:  # if id is found in ce_items move on to the next item
                 continue
             elif row[2] in second_items: # if username is found in ce_item move on to the next item
