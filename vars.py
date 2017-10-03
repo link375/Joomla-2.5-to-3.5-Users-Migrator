@@ -5,10 +5,10 @@ host = "127.0.0.1"
 user = "tester"
 password = "password"
 
-# mec ce site
-ce_db = "users_2"
+# second table / database
+second_db = "users_2"
 
 
-# mec orig site
-mec_db = "users_1"
+# first table / database
+first_db = "users_1"
 
