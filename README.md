@@ -6,12 +6,12 @@ Python script that queries 2 tables, parses data and and returns a csv file that
 
 Python 3.5x
 
-- Libraries
+# Libraries
 
-csv
+- csv
 
-mysql-client
+- mysql-client
 
-MySQLdb
+- MySQLdb
 
 
