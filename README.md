@@ -9,7 +9,9 @@ Python 3.5x
 - Libraries
 
 csv
+
 mysql-client
+
 MySQLdb
 
 
