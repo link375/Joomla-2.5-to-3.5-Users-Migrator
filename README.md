@@ -15,6 +15,9 @@
 
 Python 3.5x
 
+    sudo apt-get install python3-dev
+    sudo apt install python3-pip
+
 # Libraries
 
 - csv
@@ -23,7 +26,7 @@ Python 3.5x
 
 - mysql-client
 
-    pip install mysql-client
+    pip install mysqlclient
 
 - MySQLdb
 

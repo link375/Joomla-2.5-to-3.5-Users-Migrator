@@ -10,7 +10,8 @@ db.secondDB_c.execute("""SELECT * FROM #_users""")
 
 # store all results from the query
 results_firstDB = db.firstDB_c.fetchall()
-results_secondDB = db.secondDB_c.fetchall()
+results_secondDB = db.secondDB_c.fetchall() 
+
 
 
 # INSERT DATA
