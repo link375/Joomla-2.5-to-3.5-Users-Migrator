@@ -18,11 +18,15 @@ Python 3.5x
 # Libraries
 
 - csv
+    pip install csv
 
 - mysql-client
+    pip install mysql-client
 
 - MySQLdb
+    pip install MySQLdb
 
 - datetime
+    pip install datetime
 
 
