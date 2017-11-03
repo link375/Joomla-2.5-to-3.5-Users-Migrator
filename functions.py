@@ -112,3 +112,7 @@ def create_final(uniqueUsers):
         # go back and run through the next row - at the end return the final list
 
     return final
+
+headings = "name", "username", "email", "password", "block", "sendEmail", \
+           "registerDate", "lastvisitDate", "activation", "params", "lastResetTime", \
+           "resetCount", "otpKey", "otep", "requireReset"

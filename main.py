@@ -17,12 +17,10 @@ uniqueUsersList = utilities.find_unique_users(firstDB_list, secondDB_items)
 # remove joomla 2.5 headings and insert joomla 3.5 headings and values
 final = utilities.create_final(uniqueUsersList)
 
-headings = "name", "username", "email", "password", "block", "sendEmail", \
-           "registerDate", "lastvisitDate", "activation", "params", "lastResetTime", \
-           "resetCount", "otpKey", "otep", "requireReset"
 
 #########TESTING#######
 # insert the final list to the database
+#  change this to the joomla 3.5 db after testing
 db.test_c.executemany(Query.insert_row, final)
 db.testDB.commit()
 db.testDB.close()
@@ -31,11 +29,8 @@ db.testDB.close()
 with open("users.csv", "w") as csvfile:
     csv_writer = csv.writer(csvfile)
 
-    # write the headings to the csv file based on the new database
-    csv_writer.writerow(headings)
-
-    # write the headings to the csv file based on the joomla 3.5 users headings
-    #csv_writer.writerow([i[0] for i in db.secondDB_c.description])
+    # write the headings to the csv file based on the joomla 3.5 headings
+    csv_writer.writerow(utilities.headings)
 
     # write the final rows
     csv_writer.writerows(final)
