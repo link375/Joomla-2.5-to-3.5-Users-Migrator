@@ -113,6 +113,14 @@ def create_final(uniqueUsers):
 
     return final
 
-headings = "name", "username", "email", "password", "block", "sendEmail", \
-           "registerDate", "lastvisitDate", "activation", "params", "lastResetTime", \
-           "resetCount", "otpKey", "otep", "requireReset"
+def addUserGroup(thirdDBList):
+    """append a 2 to mark the user as a registered user"""
+    user_id = 0
+    group_id = 2
+    idList = []
+
+    for row in thirdDBList:
+        row = row + (group_id,)
+        idList.append(row)
+    return idList
+
