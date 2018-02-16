@@ -17,12 +17,23 @@ uniqueUsersList = utilities.find_unique_users(firstDB_list, secondDB_items)
 # remove joomla 2.5 headings and insert joomla 3.5 headings and values
 final = utilities.create_final(uniqueUsersList)
 
-
-#########TESTING#######
 # insert the final list to the database
-#  change this to the joomla 3.5 db after testing
-db.test_c.executemany(Query.insert_row, final)
+db.test_c.executemany(Query.insert_users_row, final)
 db.testDB.commit()
+
+
+# query the database for the users that have not logged in yet
+thirdDB_list = list(Query.queryUser_userGroup())
+
+# add the usergroup permissions to the list
+usergroup_map_list = utilities.addUserGroup(thirdDB_list)
+
+# add the usergroup permissions to the database
+db.test_c.executemany(Query.insert_usergroup_map_row, usergroup_map_list)
+db.testDB.commit()
+
+
+# close database connection
 db.testDB.close()
 
 # create a csv file and write final list to it

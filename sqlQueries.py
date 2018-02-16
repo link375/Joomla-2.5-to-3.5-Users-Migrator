@@ -17,10 +17,13 @@ results_secondDB = db.secondDB_c.fetchall()
 # INSERT DATA
 
 # Insert query when you are writing to the joomla 3.5 db
-insert_row = "INSERT INTO <changeme>_users(name, username, email, password, block, sendEmail, \
+insert_users_row = "INSERT INTO <changeme>_users(name, username, email, password, block, sendEmail, \
                  registerDate, lastvisitDate, activation, params, lastResetTime, \
                resetCount, otpKey, otep, requireReset) \
               VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
+insert_usergroup_map_row = "INSERT INTO <changeme>_user_usergroup_map(user_id, group_id) \
+                           VALUES(%s, %s)"
 
 #CSV headings
 headings = "name", "username", "email", "password", "block", "sendEmail", \
