@@ -21,7 +21,6 @@ final = utilities.create_final(uniqueUsersList)
 db.test_c.executemany(Query.insert_users_row, final)
 db.testDB.commit()
 
-
 # query the test database for the users that have not logged in yet
 thirdDB_list = list(Query.queryUser_userGroup())
 
