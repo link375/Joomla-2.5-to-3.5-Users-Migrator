@@ -91,6 +91,8 @@ def create_final(uniqueUsers):
                 row = tuple(temp_row)
 
         # Define item values for each column on joomla 3.5 db
+        # Default password: password123456!
+        password = "$2y$10$JQqeCoAukw5wzzfxcWzebeOAzDcNxqtne8enZbqTYrUCQmNw.05Na"
         block = '0'
         sendEmail = '0'
         registerDate = str(datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S"))
@@ -104,7 +106,7 @@ def create_final(uniqueUsers):
         requireReset = '0'
 
         # append the values above to the new clean row that contains only id, name, user, email, password
-        row = row + (block, sendEmail, registerDate, lastvisitDate, activation, params,
+        row = row + (password, block, sendEmail, registerDate, lastvisitDate, activation, params,
                      lastResetTime, resetCount, otpKey, otep, requireReset)
 
         # add the newly formatted row to the final list
