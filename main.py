@@ -35,7 +35,7 @@ db.testDB.commit()
 db.testDB.close()
 
 # create a csv file and write final list to it
-with open("users.csv", "w", encoding="utf-8") as csvfile:
+with open("users.csv", "w", encoding="utf-8", newline='') as csvfile:
     csv_writer = csv.writer(csvfile)
 
     # write the headings to the csv file based on the joomla 3.5 headings

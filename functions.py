@@ -55,6 +55,7 @@ def create_final(uniqueUsers):
         # enumarate
         newId = 0
         id = 0
+        password = 4
         usertype = 5
         block = 6
         sendEmail = 7
@@ -85,6 +86,7 @@ def create_final(uniqueUsers):
                 temp_row.remove(row[sendEmail])
                 temp_row.remove(row[block])
                 temp_row.remove(row[usertype])
+                temp_row.remove(row[password])
                 # strip the id since it will be auto incremented
                 temp_row.remove(row[id])
                 # assign the new clean list back to the row

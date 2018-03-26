@@ -6,6 +6,7 @@
 - All new users will be added as "registered" users.
  
 # Instructions
+- ONLY WORKING ON MYSQL 5.5.x
 - MAKE A BACKUP OF YOUR 2 DATABASES! DON'T BE STUPID!
 - setup the db.py file to match your 2 databases
 - check the sqlQueries.py file to make sure you are querying the correct tables
@@ -24,7 +25,7 @@ Python 3.5x
 
 - csv
 
-    pip install csv
+    pip install csv (deprecated)
 
 - mysql-client
 
@@ -32,10 +33,10 @@ Python 3.5x
 
 - MySQLdb
 
-    pip install MySQLdb
+    pip install MySQLdb (deprecated)
 
 - datetime
 
-    pip install datetime
+    pip install datetime (part of standard library)
 
 
