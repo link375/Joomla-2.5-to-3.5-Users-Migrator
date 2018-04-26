@@ -36,18 +36,3 @@ secondDB = MySQLdb.connect(host=host2,
 
 # create a cursor
 secondDB_c = secondDB.cursor()
-
-
-#########TESTING##########
-
-# host, user, passwd should be the same as destination DB
-# if not then add the host, user, password like the dbs above
-
-joomlaTestDB = "your_destination_schema"
-
-testDB = MySQLdb.connect(host=host2,
-                         user=user2,
-                         passwd=password2,
-                         db=joomlaTestDB)
-
-test_c = testDB.cursor()

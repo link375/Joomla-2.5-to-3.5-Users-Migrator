@@ -3,10 +3,10 @@ import db
 # QUERY DATA
 
 # query to select all user data from the joomla 2.5 db
-db.firstDB_c.execute("""SELECT * FROM <changeme>_users""")
+db.firstDB_c.execute("""SELECT * FROM <changeme_db2.5>_users""")
 
 # query to select all user data from the joomla 3.5 db
-db.secondDB_c.execute("""SELECT * FROM <changeme>_users""")
+db.secondDB_c.execute("""SELECT * FROM <changeme_db3.5>_users""")
 
 # store all results from the query
 results_firstDB = db.firstDB_c.fetchall()
@@ -32,6 +32,6 @@ headings = "name", "username", "email", "password", "block", "sendEmail", \
 
 
 def queryUser_userGroup():
-    db.test_c.execute("""SELECT id FROM <changeme_db3.5>_users WHERE lastvisitDate = '0000-00-00 00:00:00'""")
-    results_thirdDB = db.test_c.fetchall()
-    return results_thirdDB
+    db.secondDB_c.execute('''SELECT id FROM <changeme_joomla3.5>_users WHERE lastResetTime="2018-04-12 00:00:00"''')
+    results = db.secondDB_c.fetchall()
+    return results

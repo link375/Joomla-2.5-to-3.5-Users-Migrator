@@ -55,6 +55,7 @@ def create_final(uniqueUsers):
         # enumarate
         newId = 0
         id = 0
+        password = 4
         usertype = 5
         block = 6
         sendEmail = 7
@@ -85,6 +86,7 @@ def create_final(uniqueUsers):
                 temp_row.remove(row[sendEmail])
                 temp_row.remove(row[block])
                 temp_row.remove(row[usertype])
+                temp_row.remove(row[password])
                 # strip the id since it will be auto incremented
                 temp_row.remove(row[id])
                 # assign the new clean list back to the row
@@ -99,11 +101,11 @@ def create_final(uniqueUsers):
         lastvisitDate = "0000-00-00 00:00:00"
         activation = ''
         params = '{"language":"en-GB"}'
-        lastResetTime = "0000-00-00 00:00:00"
+        lastResetTime = "2018-04-12 00:00:00"
         resetCount = '0'
         otpKey = ''
         otep = ''
-        requireReset = '0'
+        requireReset = '1'
 
         # append the values above to the new clean row that contains only id, name, user, email, password
         row = row + (password, block, sendEmail, registerDate, lastvisitDate, activation, params,
@@ -115,14 +117,16 @@ def create_final(uniqueUsers):
 
     return final
 
-def addUserGroup(thirdDBList):
+def addUserGroup(neverLoggedInIDs):
     """append a 2 to mark the user as a registered user"""
     user_id = 0
     group_id = 2
-    idList = []
+    neverLoggedIn = []
 
-    for row in thirdDBList:
+    # go through all ID's and append a number 2 group ID
+    # return list of neverloggedinIDs with group 2
+    for row in neverLoggedInIDs:
         row = row + (group_id,)
-        idList.append(row)
-    return idList
+        neverLoggedIn.append(row)
+    return neverLoggedIn
 

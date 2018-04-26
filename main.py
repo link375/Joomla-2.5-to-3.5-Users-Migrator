@@ -18,24 +18,24 @@ uniqueUsersList = utilities.find_unique_users(firstDB_list, secondDB_items)
 final = utilities.create_final(uniqueUsersList)
 
 # insert the final list to the test database
-db.test_c.executemany(Query.insert_users_row, final)
-db.testDB.commit()
+db.secondDB_c.executemany(Query.insert_users_row, final)
+db.secondDB.commit()
 
 # query the test database for the users that have not logged in yet
-thirdDB_list = list(Query.queryUser_userGroup())
+neverLoggedInIDs = list(Query.queryUser_userGroup())
 
 # add the usergroup permissions to the list of users
-usergroup_map_list = utilities.addUserGroup(thirdDB_list)
+usergroup_map_list = utilities.addUserGroup(neverLoggedInIDs)
 
 # add the usergroup permissions to the test database
-db.test_c.executemany(Query.insert_usergroup_map_row, usergroup_map_list)
-db.testDB.commit()
+db.secondDB_c.executemany(Query.insert_usergroup_map_row, usergroup_map_list)
+db.secondDB.commit()
 
 # close database connection
-db.testDB.close()
+db.secondDB.close()
 
 # create a csv file and write final list to it
-with open("users.csv", "w", encoding="utf-8") as csvfile:
+with open("users.csv", "w", encoding="utf-8", newline='') as csvfile:
     csv_writer = csv.writer(csvfile)
 
     # write the headings to the csv file based on the joomla 3.5 headings
